@@ -1,0 +1,113 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.xianay</groupId>
+  <artifactId>Mathematics</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  
+  
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>3.2.5.RELEASE</spring.version>
+	</properties>
+  
+  
+  <dependencies>
+  
+  <!-- math -->
+  	<dependency>
+	<groupId>org.apache.commons</groupId>
+	<artifactId>commons-math3</artifactId>
+	<version>3.4.1</version>
+</dependency>
+
+	<!-- lang -->
+ <dependency>
+	<groupId>commons-lang</groupId>
+	<artifactId>commons-lang</artifactId>
+	<version>2.6</version>
+</dependency>
+
+<!-- junit -->
+<dependency>
+<scope>test</scope>
+	<groupId>junit</groupId>
+	<artifactId>junit</artifactId>
+	<version>4.11</version>
+</dependency>
+  	
+  </dependencies>
+  
+  
+  
+  
+  
+    <!-- 插件 -->
+  <build>
+    <plugins>
+    <!-- javadoc文档 -->
+   <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+      <!-- jdk编译 -->
+      <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          
+        </configuration>
+      </plugin>
+      <!-- jdk 源码 -->
+      		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-source-plugin</artifactId>
+			<version>2.2.1</version>
+			<configuration>
+				<attach>true</attach>
+			</configuration>
+			<executions>
+				<execution>
+					<phase>compile</phase>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+      
+      <!-- assembly打包插件 -->
+    <!--   <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      	<artifactId>maven-assembly-plugin</artifactId>  
+      	<version>2.4</version>$NO-MVN-MAN-VER$
+      	<configuration>
+      	<project>
+      		
+      	</project>
+      	<descriptorRefs>  
+             <descriptorRef>jar-with-dependencies</descriptorRef> 
+           </descriptorRefs>  
+      		<archive>
+      		<manifest>  
+                <mainClass>org.xianay.Client</mainClass>
+             </manifest>
+      		</archive>
+      	</configuration>
+      </plugin> -->
+     
+    </plugins>   
+  </build>
+  
+  
+</project>
